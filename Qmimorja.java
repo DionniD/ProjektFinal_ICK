@@ -2,18 +2,18 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
-public class Qmimorja {
-    private LocalTime oraHyrje;
+public class Price {
+    private LocalTime arrivalTime;
 
-    public Qmimorja(String oraHyrje) {
-        DateTimeFormatter formatiOres = DateTimeFormatter.ofPattern("HH:mm");
-        this.oraHyrje = LocalTime.parse(oraHyrje, formatiOres);
+    public Qmimorja(String arrivalTime) {
+        DateTimeFormatter formatofTime = DateTimeFormatter.ofPattern("HH:mm");
+        this.arrivalTime = LocalTime.parse(arrivalTime, formatofTime);
     }
 
-    public double llogaritQmimin(String oraDalje) {
-        LocalTime oraDaljeDt = LocalTime.parse(oraDalje);
-        long diferencaOre = this.oraHyrje.until(oraDaljeDt, ChronoUnit.HOURS);
-        double qmimiTotal = diferencaOre * 1.5; // Vendosni qmimin për orë këtu
-        return qmimiTotal;
+    public double (String exitTime) {
+        LocalTime exitTimeDt = LocalTime.parse(exitTime);
+        long diferenceTime = this.arrivalTime.until(exitTimeDt, ChronoUnit.HOURS);
+        double totalPrice = diferenceTime * 1.5; 
+        return totalPrice;
     }
 }
