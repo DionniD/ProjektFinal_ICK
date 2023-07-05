@@ -5,21 +5,15 @@ import java.time.temporal.ChronoUnit;
 public class Price {
     private LocalTime arrivalTime;
 
-    public Qmimorja(String arrivalTime) {
+    public Price(String arrivalTime) {
         DateTimeFormatter formatofTime = DateTimeFormatter.ofPattern("HH:mm");
         this.arrivalTime = LocalTime.parse(arrivalTime, formatofTime);
     }
 
-    public double (String exitTime) {
+    public double calculatePrice(String exitTime) {
         LocalTime exitTimeDt = LocalTime.parse(exitTime);
         long diferenceTime = this.arrivalTime.until(exitTimeDt, ChronoUnit.HOURS);
         double totalPrice = diferenceTime * 1.5; 
-        return totalPrice;
-    }
- public double calculatePrice(String oraDalje) {
-        LocalTime exitTimeDt = LocalTime.parse(exitTime);
-        long diferencaTime = this.oraHyrje.until(exitTimeDt, ChronoUnit.HOURS);
-        double totalPrice = diferenceTime * 1.5; // Vendosni qmimin për orë këtu
         return totalPrice;
     }
 
