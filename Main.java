@@ -49,15 +49,15 @@ public class Main {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-            System.out.print("Vendosni orën e hyrjes (formati HH:mm): ");
-            String oraHyrje = scanner.next();
+            System.out.print("Arrival time:  (formati HH:mm): ");
+            String arrivalTime = scanner.next();
 
-            System.out.print("Vendosni orën e daljes (formati HH:mm): ");
-            String oraDalje = scanner.next();
+            System.out.print("Exit time: (formati HH:mm): ");
+            String exitTime = scanner.next();
 
-            Price qmimorja = new Price(oraHyrje);
-            double qmimi = qmimorja.llogaritQmimin(oraDalje);
-            System.out.println("Qmimi total është: " + qmimi + " Euro ");
+            Price price = new Price(arrivalTime);
+            double price1 = price.calculatePrice(exitTime);
+            System.out.println("Qmimi total është: " + price + " Euro ");
 
             PriceMethod priceMethod = new PriceMethod();
 
