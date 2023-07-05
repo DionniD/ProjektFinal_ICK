@@ -16,4 +16,11 @@ public class Price {
         double totalPrice = diferenceTime * 1.5; 
         return totalPrice;
     }
+ public double calculatePrice(String oraDalje) {
+        LocalTime exitTimeDt = LocalTime.parse(exitTime);
+        long diferencaTime = this.oraHyrje.until(exitTimeDt, ChronoUnit.HOURS);
+        double totalPrice = diferenceTime * 1.5; // Vendosni qmimin për orë këtu
+        return totalPrice;
+    }
+
 }
