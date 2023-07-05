@@ -55,14 +55,14 @@ public class Main {
             System.out.print("Vendosni orën e daljes (formati HH:mm): ");
             String oraDalje = scanner.next();
 
-            Qmimorja qmimorja = new Qmimorja(oraHyrje);
+            Price qmimorja = new Price(oraHyrje);
             double qmimi = qmimorja.llogaritQmimin(oraDalje);
             System.out.println("Qmimi total është: " + qmimi + " Euro ");
 
-            MetodaPageses metodaPageses = new MetodaPageses();
+            PriceMethod priceMethod = new PriceMethod();
 
             // Konfirmoni pagesën
-            metodaPageses.konfirmoPagesen(qmimi);
+            priceMethod.confirmPayment(qmimi);
         }
 
 
