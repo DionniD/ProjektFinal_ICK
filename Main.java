@@ -49,20 +49,20 @@ public class Main {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-            System.out.print("Arrival time:  (formati HH:mm): ");
+            System.out.print("Arrival time:  (format HH:mm): ");
             String arrivalTime = scanner.next();
 
-            System.out.print("Exit time: (formati HH:mm): ");
+            System.out.print("Exit time: (format HH:mm): ");
             String exitTime = scanner.next();
 
             Price price = new Price(arrivalTime);
             double price1 = price.calculatePrice(exitTime);
-            System.out.println("Qmimi total është: " + price + " Euro ");
+            System.out.println("Total price: " + price + " Euro ");
 
             PriceMethod priceMethod = new PriceMethod();
 
             // Konfirmoni pagesën
-            priceMethod.confirmPayment(qmimi);
+            priceMethod.confirmPayment(price);
         }
 
 
