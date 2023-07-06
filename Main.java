@@ -8,6 +8,21 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your username:");
+        String username = scanner.nextLine();
+
+        System.out.println("Enter your password:");
+        String password = scanner.nextLine();
+
+        if (isValidLogin(username, password)) {
+            System.out.println("Login successful!");
+            // Proceed to the next steps in your application
+        } else {
+            System.out.println("Invalid username or password");
+        }
+
+
+
         System.out.print("Enter the total number of parking slots:");
         totalSlots = scanner.nextInt();
         availableSlots = totalSlots;
@@ -44,25 +59,26 @@ public class Main {
                     getEmptySlots();
                     break;
                 case 7:
+                    System.out.println("Thank you for coming.");
                     scanner.close();
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-            System.out.print("Arrival time:  (format HH:mm): ");
-            String arrivalTime = scanner.next();
+            System.out.print("Arrival time(format HH:mm): ");
+            String oraHyrje = scanner.next();
 
-            System.out.print("Exit time: (format HH:mm): ");
-            String exitTime = scanner.next();
+            System.out.print("Exit time (format HH:mm): ");
+            String oraDalje = scanner.next();
 
-            Price price = new Price(arrivalTime);
-            double price1 = price.calculatePrice(exitTime);
-            System.out.println("Total price: " + price + " Euro ");
+            Qmimorja qmimorja = new Qmimorja(oraHyrje);
+            double qmimi = qmimorja.llogaritQmimin(oraDalje);
+            System.out.println("Price: " + qmimi + " Euro ");
 
-            PriceMethod priceMethod = new PriceMethod();
+            MetodaPageses metodaPageses = new MetodaPageses();
 
             // Konfirmoni pagesën
-            priceMethod.confirmPayment(price);
+            metodaPageses.konfirmoPagesen(qmimi);
         }
 
 
@@ -175,5 +191,7 @@ public class Main {
         System.out.println("Total empty slots: " + emptySlots);
     }
 
-
+    private static boolean isValidLogin(String username, String password) {
+        return username.equals("Medina") && password.equals("Medina123");
+    }
 }
